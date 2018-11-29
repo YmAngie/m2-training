@@ -1,10 +1,21 @@
 <?xml version="1.0"?>
 
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="product.info.main">
             <block name="need-stuff" template="Magento_Catalog::product/view/need-stuff.phtml"/>
+
+            <block name="additional_new" template="Magento_Catalog::product/view/additional_new.phtml">
+                <arguments>
+                    <argument name="text" xsi:type="string">One more additional text block</argument>
+                </arguments>
+            </block>
+
+            <block name="product.info.additional" after="need-stuff">
+                <arguments>
+                    <argument name="template" xsi:type="string">Magento_Catalog::product/view/additional.phtml</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
