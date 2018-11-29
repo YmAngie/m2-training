@@ -9,4 +9,8 @@
             </image>
         </images>
     </media>
+
+    <vars module="Magento_Catalog">
+        <var name="additional_text_width">150</var>
+    </vars>
 </view>

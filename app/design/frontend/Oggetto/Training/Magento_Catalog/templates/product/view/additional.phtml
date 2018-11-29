@@ -1,1 +1,7 @@
-<p><?= $block->escapeHtml(__('Additional text block')) ?></p>
+<?php
+$width = $block->getVar('additional_text_width', 'Magento_Catalog');
+?>
+
+<p style="width:<?= $width ?>px;background:yellow">
+    <?= $block->escapeHtml(__('Additional text block')) ?>
+</p>
