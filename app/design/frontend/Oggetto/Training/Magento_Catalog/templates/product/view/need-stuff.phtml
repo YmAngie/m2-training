@@ -1,1 +1,11 @@
-<p data-mage-init='{"colorize":{"color":"red"}}'><?= /* @escapeNotVerified */ __('You need this stuff') ?></p>
+<p id="needStuff"><?= /* @escapeNotVerified */ __('You need this stuff') ?></p>
+
+<script type="text/x-magento-init">
+    {
+        "#needStuff": {
+            "colorize": {
+                "color": "red"
+            }
+        }
+    }
+</script>
