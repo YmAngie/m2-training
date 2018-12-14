@@ -1,18 +1,9 @@
-<p id="needStuff" data-color="red"><?= /* @escapeNotVerified */ __('You need this stuff') ?></p>
+<p id="needStuff" data-color="red" data-type="need-stuff-text"><?= /* @escapeNotVerified */ __('You need this stuff') ?></p>
 
-<script>
-    require([
-        'jquery',
-        'colorize'
-    ], function (
-        $,
-        colorize
-    ) {
-        var needStuff = '#needStuff',
-            config = {
-                color: $(needStuff).data('color')
-            };
-
-        colorize(config, needStuff);
-    });
+<script type="text/x-magento-init">
+    {
+        "[data-type=need-stuff-text]": {
+            "colorize": {}
+        }
+    }
 </script>

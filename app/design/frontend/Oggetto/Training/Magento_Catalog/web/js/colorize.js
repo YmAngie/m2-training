@@ -1,19 +1,26 @@
 define([
-    'jquery'
+    'jquery',
+    'jquery/ui'
 ], function (
     $
 ) {
     'use strict';
 
-    function colorize($element, color) {
-        $element.css('color',color);
-    }
+    $.widget('mage.colorize', {
+        _create: function() {
+            this.$element = $(this.element);
+            this.color = this.$element.data('color');
+            this._events();
+        },
 
-    return function(config, element) {
-        var $element = $(element),
-            color = config.color;
-        $element.on('click', function() {
-            colorize($element, color);
-        });
-    };
+        _events: function() {
+            this.$element.on('click', this._changeColor.bind(this));
+        },
+
+        _changeColor: function() {
+            this.$element.css('color',this.color);
+        }
+    });
+
+    return $.mage.colorize;
 });
